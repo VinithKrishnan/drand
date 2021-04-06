@@ -310,7 +310,7 @@ func copyAndSort(list []*Identity) []*Node {
 
 // MinimumT calculates the threshold needed for the group to produce sufficient shares to decode
 func MinimumT(n int) int {
-	return (n >> 1) + 1
+	return (n/3) + 1
 }
 
 // GroupFromProto convertes a protobuf group into a local Group object
