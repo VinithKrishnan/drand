@@ -3,7 +3,7 @@
 set -x
 
 N=5
-T=2
+T=3
 
 
 curr=$(pwd)

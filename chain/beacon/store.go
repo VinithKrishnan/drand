@@ -77,7 +77,7 @@ func (d *discrepancyStore) Put(b *chain.Beacon) error {
 	discrepancy := float64(actual-expected) / float64(time.Millisecond)
 	metrics.BeaconDiscrepancyLatency.Set(float64(actual-expected) / float64(time.Millisecond))
 	metrics.LastBeaconRound.Set(float64(b.GetRound()))
-	d.l.Info("NEW_BEACON_STORED", b.String(), "time_discrepancy_ms", discrepancy)
+	d.l.Info("NEW_BEACON_STORED", b.String(), "time_discrepancy_ms", discrepancy,"size",len(b.PreviousSig)+len(b.Signature)+1)
 	return nil
 }
 

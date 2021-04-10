@@ -288,6 +288,7 @@ func (h *Handler) broadcastNextPartial(current roundInfo, upon *chain.Beacon) {
 		PreviousSig: previousSig,
 		PartialSig:  currSig,
 	}
+	h.l.Info("Message + Signature","size:",len(previousSig)+len(currSig)+1)
 	h.chain.NewValidPartial(h.addr, packet)
 	for _, id := range h.crypto.GetGroup().Nodes {
 		if h.addr == id.Address() {
